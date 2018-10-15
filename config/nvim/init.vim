@@ -14,7 +14,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'vim-ruby/vim-ruby'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
-
 " Colorschemes/themes
 Plug 'morhetz/gruvbox'
 " Git
@@ -68,7 +67,6 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'elixir-editors/vim-elixir'
 "whitespace
 Plug 'ntpeters/vim-better-whitespace'
-
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
@@ -76,18 +74,14 @@ Plug 'easymotion/vim-easymotion'
 "Plug 'justinmk/vim-dirvish'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 " live markdown - use :LivedownToggle to launch/kill
 Plug 'shime/vim-livedown'
-
 " https://github.com/junegunn/fzf#as-vim-plugin
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 " JS highlighting and indent support. Sometimes buggy, but has support for
 " " jsdocs and flow
 Plug 'pangloss/vim-javascript', { 'for': ['javascript']}
-
 "Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -98,11 +92,31 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'Shougo/denite.nvim'
 
 Plug 'Shougo/echodoc.vim'
+
+Plug 'wookiehangover/jshint.vim'
+
+Plug 'ctrlpvim/ctrlp.vim'
+"rails
+Plug 'tpope/vim-rails'
+"rubocop
+Plug 'ngmy/vim-rubocop'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+" splitjoin
+Plug 'AndrewRadev/splitjoin.vim'
+
 call plug#end()
 
 if !was_installed
   PlugInstall
 endif
+
+set runtimepath^=~/.vim/plugged/ctrlp.vim
+
+let g:mapleader=","
+let mapleader=","
 
 set autoread
 set number
@@ -197,6 +211,11 @@ let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+" use rubocop
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+
 " Cursor motion
 set scrolloff=3
 set backspace=indent,eol,start
@@ -214,3 +233,51 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType eelixir set omnifunc=htmlcomplete#CompleteTags
 
 :imap jk <Esc>
+
+"tabs
+nnoremap <tab> :tabnext<CR>
+nnoremap <C-T> :tabnew<CR>
+inoremap <tab> <Esc>:tabnext<CR>i
+inoremap <C-T> <Esc>:tabnew<CR>
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
+
+" Grepping made easy
+" ==================
+
+command! -nargs=1 SearchInRepo :silent! Ggrep! "\b<args>\b" | :copen
+nnoremap <leader>g :SearchInRepo <C-R><C-W>
+
+set nohlsearch
+nnoremap <leader>h :set hlsearch!<CR>
+
+" Make 0 go to the first character rather than the beginning
+" of the line. When we're programming, we're almost always
+" interested in working with text rather than empty space. If
+" you want the traditional beginning of line, use ^
+nnoremap 0 ^
+nnoremap ^ 0
+
+" Create window splits easier. The default
+" way is Ctrl-w,v and Ctrl-w,s. I remap
+" this to vv and ss
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s
+
+" ============================
+" SplitJoin plugin
+" ============================
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
