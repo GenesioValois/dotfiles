@@ -125,15 +125,17 @@ set t_Co=256
 set background=dark
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
 set backupdir=~/.vim/backup/
 set directory=~/.vim/backup/
-set cursorline
+set cursorline!
 set wrap
-set textwidth=79
+set textwidth=99
 set formatoptions=tcqrn1
-set softtabstop=2
 set noshiftround
+set termguicolors
+set lazyredraw
 
 set hidden
 set mouse=a
@@ -167,7 +169,7 @@ noremap <Up> :echoe "Use k"<CR>
 noremap <Down> :echoe "Use j"<CR>
 
 " Share the clipboard outside of macvim
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " Auto format any pasted text
 nnoremap P P=`]
@@ -251,7 +253,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Make it obvious where 80 characters is
-set textwidth=80
+" at deco we use 100
+set textwidth=99
 set colorcolumn=+1
 
 " Grepping made easy
@@ -296,3 +299,7 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 inoremap <S-Tab> <C-n>
+
+" git gutter hunk movements
+nmap <leader>j <Plug>GitGutterNextHunk
+nmap <leader>k <Plug>GitGutterPrevHunk
