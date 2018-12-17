@@ -65,12 +65,15 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 " Elixir
 Plug 'elixir-editors/vim-elixir'
+
 "whitespace
 Plug 'ntpeters/vim-better-whitespace'
+
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
+
 "Plug 'justinmk/vim-dirvish'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -96,8 +99,6 @@ Plug 'Shougo/echodoc.vim'
 Plug 'wookiehangover/jshint.vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
-"rails
-Plug 'tpope/vim-rails'
 "rubocop
 Plug 'ngmy/vim-rubocop'
 Plug 'tpope/vim-cucumber'
@@ -106,6 +107,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 " splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
+"rails
+Plug 'tpope/vim-rails'
+" test
+Plug 'janko-m/vim-test'
+" using ctrl + h/j/k/l on tmux
+Plug 'christoomey/vim-tmux-navigator'
+"
+Plug 'christoomey/vim-tmux-runner'
 
 call plug#end()
 
@@ -259,7 +268,6 @@ set colorcolumn=+1
 
 " Grepping made easy
 " ==================
-
 command! -nargs=1 SearchInRepo :silent! Ggrep! "\b<args>\b" | :copen
 nnoremap <leader>g :SearchInRepo <C-R><C-W>
 
@@ -303,3 +311,24 @@ inoremap <S-Tab> <C-n>
 " git gutter hunk movements
 nmap <leader>j <Plug>GitGutterNextHunk
 nmap <leader>k <Plug>GitGutterPrevHunk
+
+" angular js configs
+let g:angular_source_directory = 'src/scripts'
+let g:angular_find_ignore = ['components/', 'node_modules/', 'dist/']
+
+
+" Don't allow any default key-mappings.
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+
+" vim-rspec mappings
+nnoremap <Leader>rs :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>rn :call RunNearestSpec()<CR>
+nnoremap <Leader>rl :call RunLastSpec()<CR>
+nnoremap <Leader>ra :call RunAllSpecs()<CR>
+" vim-test
+nmap <leader>t :TestFile<CR>
