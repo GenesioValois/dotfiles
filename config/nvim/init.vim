@@ -310,3 +310,21 @@ inoremap <S-Tab> <C-n>
 " git gutter hunk movements
 nmap <leader>j <Plug>GitGutterNextHunk
 nmap <leader>k <Plug>GitGutterPrevHunk
+
+" angular js configs
+let g:angular_source_directory = 'src/scripts'
+let g:angular_find_ignore = ['components/', 'node_modules/', 'dist/']
+
+" Don't allow any default key-mappings.
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+
+" vim-test
+nmap <leader>t :TestFile<CR>
+
+" Insert Mode
+iabbr bp binding.pry
