@@ -65,12 +65,15 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 " Elixir
 Plug 'elixir-editors/vim-elixir'
+
 "whitespace
 Plug 'ntpeters/vim-better-whitespace'
+
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
+
 "Plug 'justinmk/vim-dirvish'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -95,9 +98,6 @@ Plug 'Shougo/echodoc.vim'
 
 Plug 'wookiehangover/jshint.vim'
 
-Plug 'ctrlpvim/ctrlp.vim'
-"rails
-Plug 'tpope/vim-rails'
 "rubocop
 Plug 'ngmy/vim-rubocop'
 Plug 'tpope/vim-cucumber'
@@ -259,7 +259,6 @@ set colorcolumn=+1
 
 " Grepping made easy
 " ==================
-
 command! -nargs=1 SearchInRepo :silent! Ggrep! "\b<args>\b" | :copen
 nnoremap <leader>g :SearchInRepo <C-R><C-W>
 
