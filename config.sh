@@ -4,3 +4,4 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 
 # forces creation of a link
 ln -f config/nvim/init.vim ~/.config/nvim/init.vim
+ln -f config/nvim/mappings.vim ~/.config/nvim/mappings.vim
