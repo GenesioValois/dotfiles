@@ -106,6 +106,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 " splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
+"rails
+Plug 'tpope/vim-rails'
+" test
+Plug 'janko-m/vim-test'
+" using ctrl + h/j/k/l on tmux
+Plug 'christoomey/vim-tmux-navigator'
+"
+Plug 'christoomey/vim-tmux-runner'
 
 call plug#end()
 
