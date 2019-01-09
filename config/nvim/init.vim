@@ -185,16 +185,7 @@ nnoremap p p=`]
 
 " Highlight search results
 set hlsearch
-
-" NerdTree keymaps
-nmap <silent> <Leader>p :NERDTreeToggle<CR>
-nmap <silent> <Leader>l :NERDTreeFind<CR>
-
-" Easymotion
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+" set nohlsearch
 
 " livedown setup
 let g:livedown_browser = "firefoxNightly"
@@ -207,8 +198,6 @@ let g:loaded_zipPlugin = 1
 let g:loaded_netrwPlugin = 1
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
-nmap <silent> <Leader>f :Files<CR>
 
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
@@ -242,89 +231,17 @@ let g:indentLine_conceallevel=1
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType eelixir set omnifunc=htmlcomplete#CompleteTags
 
-:imap jk <Esc>
-
-"tabs
-nnoremap <tab> :tabnext<CR>
-nnoremap <C-T> :tabnew<CR>
-inoremap <tab> <Esc>:tabnext<CR>i
-inoremap <C-T> <Esc>:tabnew<CR>
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " Make it obvious where 80 characters is
 " at deco we use 100
 set textwidth=99
 set colorcolumn=+1
 
-" Grepping made easy
-" ==================
-command! -nargs=1 SearchInRepo :silent! Ggrep! "\b<args>\b" | :copen
-nnoremap <leader>g :SearchInRepo <C-R><C-W>
-
-set nohlsearch
-nnoremap <leader>h :set hlsearch!<CR>
-
-" Make 0 go to the first character rather than the beginning
-" of the line. When we're programming, we're almost always
-" interested in working with text rather than empty space. If
-" you want the traditional beginning of line, use ^
-nnoremap 0 ^
-nnoremap ^ 0
-
-" Create window splits easier. The default
-" way is Ctrl-w,v and Ctrl-w,s. I remap
-" this to vv and ss
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
-
-" ============================
-" SplitJoin plugin
-" ============================
-nmap sj :SplitjoinSplit<cr>
-nmap sk :SplitjoinJoin<cr>
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<Tab>"
-  else
-    return "\<C-p>"
-  endif
-endfunction
-inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
-inoremap <S-Tab> <C-n>
-
-" git gutter hunk movements
-nmap <leader>j <Plug>GitGutterNextHunk
-nmap <leader>k <Plug>GitGutterPrevHunk
-
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+"
 " angular js configs
 let g:angular_source_directory = 'src/scripts'
 let g:angular_find_ignore = ['components/', 'node_modules/', 'dist/']
 
-" Don't allow any default key-mappings.
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-
-" vim-test
-nmap <leader>t :TestFile<CR>
-
-" Insert Mode
-iabbr bp binding.pry
+so ~/.config/nvim/mappings.vim
