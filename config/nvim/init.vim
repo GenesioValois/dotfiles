@@ -148,6 +148,9 @@ set lazyredraw
 set hidden
 set mouse=a
 
+" set diff options
+set diffopt=filler,vertical
+
 " Status bar
 set laststatus=2
 
