@@ -121,8 +121,6 @@ if !was_installed
   PlugInstall
 endif
 
-set runtimepath^=~/.vim/plugged/ctrlp.vim
-
 let g:mapleader=","
 let mapleader=","
 
@@ -170,18 +168,8 @@ set smartcase
 set showmode
 set showcmd
 
-" Disabling arrow keys
-noremap <Left> :echoe "Use h"<CR>
-noremap <Right> :echoe "Use l"<CR>
-noremap <Up> :echoe "Use k"<CR>
-noremap <Down> :echoe "Use j"<CR>
-
 " Share the clipboard outside of macvim
 set clipboard+=unnamedplus
-
-" Auto format any pasted text
-nnoremap P P=`]
-nnoremap p p=`]
 
 " Highlight search results
 set hlsearch
