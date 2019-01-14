@@ -1,3 +1,13 @@
+" Disabling arrow keys
+noremap <Left> :echoe "Use h"<CR>
+noremap <Right> :echoe "Use l"<CR>
+noremap <Up> :echoe "Use k"<CR>
+noremap <Down> :echoe "Use j"<CR>
+
+" Auto format any pasted text
+nnoremap P P=`]
+nnoremap p p=`]
+
 :imap jk <Esc>
 
 " Grepping made easy
@@ -13,6 +23,12 @@ nmap <leader>k <Plug>GitGutterPrevHunk
 
 " Don't allow any default key-mappings.
 let g:tmux_navigator_no_mappings = 1
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
@@ -65,12 +81,6 @@ nnoremap <C-Right>  <C-w>>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 " Tab completion
 " will insert tab at beginning of line,
