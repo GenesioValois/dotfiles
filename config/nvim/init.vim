@@ -114,6 +114,8 @@ Plug 'janko-m/vim-test'
 Plug 'christoomey/vim-tmux-navigator'
 "
 Plug 'christoomey/vim-tmux-runner'
+" Plug to resolve git merge conflict
+Plug 'christoomey/vim-conflicted'
 
 call plug#end()
 
@@ -231,5 +233,10 @@ set splitright
 " angular js configs
 let g:angular_source_directory = 'src/scripts'
 let g:angular_find_ignore = ['components/', 'node_modules/', 'dist/']
+
+" Conflicted
+let g:diffget_local_map = 'gl'
+let g:diffget_upstream_map = 'gu'
+set stl+=%{ConflictedVersion()}
 
 so ~/.config/nvim/mappings.vim
