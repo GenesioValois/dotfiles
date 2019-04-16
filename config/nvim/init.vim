@@ -15,6 +15,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Airline for the tabs
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 Plug 'honza/vim-snippets'
 " Comment in/out stuff easily
 Plug 'tomtom/tcomment_vim'
