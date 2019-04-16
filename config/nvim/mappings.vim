@@ -56,10 +56,13 @@ function! YRRunAfterMaps()
   nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
 endfunction
 
-" tabs related mappings
-nnoremap <tab> :tabnext<CR>
+"" Tabs for
+inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
+" nnoremap <tab> :tabnext<CR>
 nnoremap <C-T> :tabnew<CR>
-inoremap <tab> <Esc>:tabnext<CR>i
+" inoremap <tab> <Esc>:tabnext<CR>i
 inoremap <C-T> <Esc>:tabnew<CR>
 
 " Use Alt- numbers to pick the tab you want
@@ -72,6 +75,59 @@ map <silent> <A-6> :tabn 6<cr>
 map <silent> <A-7> :tabn 7<cr>
 map <silent> <A-8> :tabn 8<cr>
 map <silent> <A-9> :tabn 9<cr>
+
+" Terminal integrated with F4
+let g:term_buf = 0
+function! Term_toggle()
+  1wincmd w
+  if g:term_buf == bufnr("")
+    setlocal bufhidden=hide
+    close
+  else
+    topleft vnew
+    try
+      exec "buffer ".g:term_buf
+    catch
+      call termopen("zsh", {"detach": 1 })
+      let g:term_buf = bufnr("")
+    endtry
+    startinsert!
+  endif
+endfunction
+nnoremap <f4> :call Term_toggle()<cr>
+
+" Exit from terminal
+:tnoremap <F5> <C-\><C-n>
+
+" Vim-Fugitive
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gb :Gbrowse<CR>
+nmap <leader>ga :Git add .<CR>:bd!<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gl :Glog
+nmap <leader>ge :Gedit<CR>
+nmap <leader>gh :Git checkout
+nmap <leader>gg :Git pull<CR>
+nmap <leader>gm :Git checkout master
+nmap <leader>gwd :Git diff HEAD .<CR>
+
+" Rails Stuff
+nmap <leader>rt :A<CR>
+nmap <leader>rm :Emodel<CR>
+nmap <leader>rc :Econtroller<CR>
+nmap <leader>rv :Eview<CR>
+nmap <leader>rwt :AV<CR>
+nmap <leader>rwm :Vmodel<CR>
+nmap <leader>rwc :Vcontroller<CR>
+nmap <leader>rwv :Vview<CR>
+nmap <leader>rwu :RuboCop -a<CR>
+
+" test
+map <Leader>tn :TestNearest<CR>
+map <Leader>tf :TestFile<CR>
+map <Leader>ta :TestSuite<CR>
+map <Leader>tl :TestLast<CR>
 
 " Resize windows with arrow keys
 nnoremap <C-Up> <C-w>+
@@ -179,10 +235,6 @@ nnoremap <silent> ss <C-w>s
 " ============================
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
-
-" NerdTree keymaps
-nmap <silent> <Leader>p :NERDTreeToggle<CR>
-nmap <silent> <Leader>l :NERDTreeFind<CR>
 
 " Easymotion
 map  / <Plug>(easymotion-sn)
