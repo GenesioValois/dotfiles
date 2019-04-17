@@ -25,8 +25,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 " Auto close pairs
 Plug 'jiangmiao/auto-pairs'
-" Ctags
-Plug 'ludovicchabant/vim-gutentags'
+" " Ctags
+" Plug 'ludovicchabant/vim-gutentags'
 " Unpaired
 Plug 'tpope/vim-unimpaired'
 " Git Diff
@@ -41,6 +41,8 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 " CoolIcons
 Plug 'ryanoasis/vim-devicons'
+" Polyglot
+Plug 'sheerun/vim-polyglot'
 " Ruby
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
@@ -84,8 +86,6 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 
 "whitespace
 Plug 'ntpeters/vim-better-whitespace'
-"jshint
-Plug 'jshint/jshint'
 
 " utils
 Plug 'mattn/emmet-vim'
@@ -100,9 +100,6 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript']}
 Plug 'Shougo/denite.nvim'
 " doc
 Plug 'Shougo/echodoc.vim'
-
-" Lint
-Plug 'wookiehangover/jshint.vim'
 
 " splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
@@ -175,6 +172,13 @@ set clipboard+=unnamedplus
 " set hlsearch
 set nohlsearch
 
+augroup myfiletypes
+  " Clear old autocmds in group
+  autocmd!
+  " autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,javascript,eruby,yaml,markdown set ai sw=2 sts=2 et
+augroup END
+
 " Disable bloated stuff that is on by default.
 let g:loaded_2html_plugin = 1
 let g:loaded_gzip = 1
@@ -204,14 +208,14 @@ let g:strip_whitespace_on_save=1
 " ale configs
 " use rubocop
 let g:ale_fixers = {
-\   'ruby': ['rubocop'],
-\   'javascript': ['jshint']
-\}
+      \   'ruby': ['rubocop'],
+      \   'javascript': ['jshint']
+      \}
 
 let g:ale_linters = {
-\   'ruby': ['rubocop'],
-\   'javascript': ['jshint']
-\}
+      \   'ruby': ['rubocop'],
+      \   'javascript': ['jshint']
+      \}
 
 let g:ale_completion_enabled = 1
 let g:ale_enabled = 1
