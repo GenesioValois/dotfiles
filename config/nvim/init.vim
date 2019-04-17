@@ -93,7 +93,7 @@ Plug 'easymotion/vim-easymotion'
 
 " JS highlighting and indent support. Sometimes buggy, but has support for
 " " jsdocs and flow
-" Plug 'pangloss/vim-javascript', { 'for': ['javascript']}
+Plug 'pangloss/vim-javascript', { 'for': ['javascript']}
 
 "buffer files
 Plug 'Shougo/denite.nvim'
