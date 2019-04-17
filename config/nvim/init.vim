@@ -48,7 +48,6 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'ngmy/vim-rubocop'
 Plug 'tpope/vim-cucumber'
-" Plug 'thoughtbot/vim-rspec'
 Plug 'janko-m/vim-test'
 " Run code with ,r
 Plug 'xianzhon/vim-code-runner'
@@ -64,10 +63,10 @@ Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
 " Add end to ruby blocks automatically
 Plug 'tpope/vim-endwise'
-" Heuristically adjust shiftwidth and expandtab
-Plug 'tpope/vim-sleuth'
 " Make . work with surround (and other plugins)
 Plug 'tpope/vim-repeat'
+" Keep layout when deleting/wiping buffers
+Plug 'qpkorr/vim-bufkill'
 
 " Highlight colors
 Plug 'ap/vim-css-color'
@@ -94,7 +93,7 @@ Plug 'easymotion/vim-easymotion'
 
 " JS highlighting and indent support. Sometimes buggy, but has support for
 " " jsdocs and flow
-Plug 'pangloss/vim-javascript', { 'for': ['javascript']}
+" Plug 'pangloss/vim-javascript', { 'for': ['javascript']}
 
 "buffer files
 Plug 'Shougo/denite.nvim'
@@ -171,13 +170,6 @@ set clipboard+=unnamedplus
 " Highlight search results
 " set hlsearch
 set nohlsearch
-
-augroup myfiletypes
-  " Clear old autocmds in group
-  autocmd!
-  " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,javascript,eruby,yaml,markdown set ai sw=2 sts=2 et
-augroup END
 
 " Disable bloated stuff that is on by default.
 let g:loaded_2html_plugin = 1
