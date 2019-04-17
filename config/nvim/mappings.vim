@@ -245,3 +245,18 @@ map  N <Plug>(easymotion-prev)
 " search files
 nmap <silent> <Leader>f :Files<CR>
 
+" Ack
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
+" ALEFix
+nmap <Leader>af <Plug>(ale_fix):e!<Enter>
+
+" Replace all :
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+
+" Copy filepath
+nmap <Leader>cs :let @+=expand("%")<CR>
+
+" inline blame
+nmap <expr> <leader>b ToggleBlameLine()

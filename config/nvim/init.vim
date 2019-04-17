@@ -84,6 +84,8 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 
 "whitespace
 Plug 'ntpeters/vim-better-whitespace'
+"jshint
+Plug 'jshint/jshint'
 
 " utils
 Plug 'mattn/emmet-vim'
@@ -122,6 +124,7 @@ set number
 set autoread
 set ruler
 colorscheme gruvbox
+
 set t_Co=256
 set background=dark
 set tabstop=2
@@ -135,7 +138,6 @@ set wrap
 set textwidth=99
 set formatoptions=tcqrn1
 set noshiftround
-set termguicolors
 set lazyredraw
 
 set hidden
@@ -170,8 +172,8 @@ set showcmd
 set clipboard+=unnamedplus
 
 " Highlight search results
-set hlsearch
-" set nohlsearch
+" set hlsearch
+set nohlsearch
 
 " Disable bloated stuff that is on by default.
 let g:loaded_2html_plugin = 1
@@ -199,10 +201,20 @@ let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+" ale configs
 " use rubocop
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
+\   'javascript': ['jshint']
 \}
+
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\   'javascript': ['jshint']
+\}
+
+let g:ale_completion_enabled = 1
+let g:ale_enabled = 1
 
 " Cursor motion
 set scrolloff=3
@@ -227,5 +239,11 @@ set colorcolumn=+1
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" airline_theme
+let g:airline_theme='minimalist'
+let g:airline_powerline_fonts = 1
+
+let g:tmuxline_preset = 'full'
 
 so ~/.config/nvim/mappings.vim
