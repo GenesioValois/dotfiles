@@ -182,6 +182,7 @@ let g:loaded_netrwPlugin = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
+let g:tmuxline_preset = 'full'
 " install nerd font
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
@@ -235,11 +236,5 @@ set colorcolumn=+1
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
-" airline_theme
-let g:airline_theme='minimalist'
-let g:airline_powerline_fonts = 1
-
-let g:tmuxline_preset = 'full'
 
 so ~/.config/nvim/mappings.vim

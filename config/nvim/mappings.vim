@@ -57,13 +57,13 @@ function! YRRunAfterMaps()
 endfunction
 
 "" Tabs for
+nnoremap <tab> :tabnext<CR>
+nnoremap <C-T> :tabnew<CR>
+inoremap <tab> <Esc>:tabnext<CR>i
+inoremap <C-T> <Esc>:tabnew<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
-" nnoremap <tab> :tabnext<CR>
-nnoremap <C-T> :tabnew<CR>
-" inoremap <tab> <Esc>:tabnext<CR>i
-inoremap <C-T> <Esc>:tabnew<CR>
 
 " Use Alt- numbers to pick the tab you want
 map <silent> <A-1> :tabn 1<cr>
@@ -260,3 +260,6 @@ nmap <Leader>cs :let @+=expand("%")<CR>
 
 " inline blame
 nmap <expr> <leader>b ToggleBlameLine()
+
+" debugger mapping
+iabbr dbg debugger;
