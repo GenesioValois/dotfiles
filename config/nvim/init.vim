@@ -117,6 +117,7 @@ let g:mapleader=","
 let mapleader=","
 
 set number
+set relativenumber
 set autoread
 set ruler
 colorscheme gruvbox
