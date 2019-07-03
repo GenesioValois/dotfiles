@@ -102,7 +102,7 @@ nnoremap <f4> :call Term_toggle()<cr>
 " Vim-Fugitive
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
-nmap <leader>gb :Gbrowse<CR>
+nmap <leader>gb :Gblame<CR>
 nmap <leader>ga :Git add .<CR>:bd!<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gl :Glog
@@ -257,9 +257,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 
 " Copy filepath
 nmap <Leader>cs :let @+=expand("%")<CR>
-
-" inline blame
-nmap <expr> <leader>b ToggleBlameLine()
 
 " debugger mapping
 iabbr dbg debugger;
