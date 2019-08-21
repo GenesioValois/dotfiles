@@ -122,7 +122,7 @@ set autoread
 set ruler
 colorscheme gruvbox
 
-set t_Co=256
+set termguicolors
 set background=dark
 set tabstop=2
 set shiftwidth=2
