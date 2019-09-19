@@ -9,9 +9,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " lint and fixer
-Plug 'w0rp/ale'
-" Coc <3
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'dense-analysis/ale'
 " Airline for the tabs
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -19,10 +17,6 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'honza/vim-snippets'
 " Comment in/out stuff easily
 Plug 'tomtom/tcomment_vim'
-" Git
-Plug 'tpope/vim-fugitive'
-" Easily change delimiters
-Plug 'tpope/vim-surround'
 " Auto close pairs
 Plug 'jiangmiao/auto-pairs'
 " " Ctags
@@ -49,8 +43,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'ngmy/vim-rubocop'
 Plug 'tpope/vim-cucumber'
 Plug 'janko-m/vim-test'
-" Run code with ,r
-Plug 'xianzhon/vim-code-runner'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
 " Change background of inactive windows
@@ -65,45 +57,34 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-endwise'
 " Make . work with surround (and other plugins)
 Plug 'tpope/vim-repeat'
-" Keep layout when deleting/wiping buffers
-Plug 'qpkorr/vim-bufkill'
-
+" Git
+Plug 'tpope/vim-fugitive'
+" Easily change delimiters
+Plug 'tpope/vim-surround'
 " Highlight colors
 Plug 'ap/vim-css-color'
 " Automatically change dir when opening files
 Plug 'airblade/vim-rooter'
-
 " Many handy text objects
 Plug 'wellle/targets.vim'
-
-" " Easy swap of text objects
-" Plug 'tommcdo/vim-exchange'
-
 " Ruby blocks text object
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
-
 "whitespace
 Plug 'ntpeters/vim-better-whitespace'
-
-" utils
-Plug 'mattn/emmet-vim'
-Plug 'godlygeek/tabular'
-Plug 'easymotion/vim-easymotion'
-
 " JS highlighting and indent support. Sometimes buggy, but has support for
 " " jsdocs and flow
 Plug 'pangloss/vim-javascript', { 'for': ['javascript']}
-
 "buffer files
 Plug 'Shougo/denite.nvim'
-" doc
-Plug 'Shougo/echodoc.vim'
-
 " splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
 " using ctrl + h/j/k/l on tmux
 Plug 'christoomey/vim-tmux-navigator'
+" utils
+Plug 'mattn/emmet-vim'
+Plug 'godlygeek/tabular'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -111,7 +92,7 @@ if !was_installed
   PlugInstall
 endif
 
-set encoding=UTF-8
+set encoding=utf8
 
 let g:mapleader=","
 let mapleader=","
@@ -188,31 +169,49 @@ let g:tmuxline_preset = 'full'
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-" Enable deoplete at startup
-let g:deoplete#enable_at_startup = 1
-
-"deoplete async-clj-omni config
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-
 " better whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+let g:has_async = v:version >= 800 || has('nvim')
+" ALE linting events
+augroup ale
+  autocmd!
+
+  if g:has_async
+    autocmd VimEnter *
+          \ set updatetime=1000 |
+          \ let g:ale_lint_on_text_changed = 0
+    autocmd CursorHold * call ale#Queue(0)
+    autocmd CursorHoldI * call ale#Queue(0)
+    autocmd InsertEnter * call ale#Queue(0)
+    autocmd InsertLeave * call ale#Queue(0)
+  else
+    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
+  endif
+augroup END
+
+" autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
+
 " ale configs
 " use rubocop
 let g:ale_fixers = {
-      \   'ruby': ['rubocop'],
+      \   'ruby': ['rubocop', 'trim_whitespace', 'remove_trailing_lines'],
       \   'javascript': ['jshint']
       \}
 
 let g:ale_linters = {
-      \   'ruby': ['rubocop'],
+      \   'ruby': ['rubocop', 'solargraph', 'ruby'],
       \   'javascript': ['jshint']
       \}
-
-let g:ale_completion_enabled = 1
+let g:ale_ruby_rubocop_executable = 'rubocop'
+let g:ale_ruby_solargraph_executable = 'solargraph'
+let g:ale_ruby_solargraph_options = {}
 let g:ale_enabled = 1
+" Use ALE's function for omnicompletion.
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+set completeopt=menu,menuone,preview,noselect,noinsert
 
 " Cursor motion
 set scrolloff=3
