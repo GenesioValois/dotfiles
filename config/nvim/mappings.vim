@@ -1,3 +1,11 @@
+" Map spacebar to :
+nno <Space> :
+vno <Space> :
+
+" Indent/unindent visual mode selection
+vmap <tab>      >gv
+vmap <S-tab>    <gv
+
 " Disabling arrow keys
 noremap <Left> :echoe "Use h"<CR>
 noremap <Right> :echoe "Use l"<CR>
@@ -10,10 +18,8 @@ nnoremap p p=`]
 
 :imap jk <Esc>
 
-" Grepping made easy
-" ==================
-command! -nargs=1 SearchInRepo :silent! Ggrep! "\b<args>\b" | :copen
-nnoremap <leader>g :SearchInRepo <C-R><C-W>
+" Grepping made easy using ag
+nnoremap <leader>g :Ag <C-R><C-W>
 
 nnoremap <leader>h :set hlsearch!<CR>
 
@@ -182,7 +188,7 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 " ,# Surround a word with #{ruby interpolation}
-map ,# ysiw#
+map ,# ciw#{<C-R>"}<ESC>
 vmap ,# c#{<C-R>"}<ESC>
 
 " ," Surround a word with "quotes"
@@ -248,3 +254,28 @@ nmap <Leader>cs :let @+=expand("%")<CR>
 
 " debugger mapping
 iabbr dbg debugger;
+
+" Remap keys for gotos
+nmap <silent> gdd :ALEGoToDefinition<cr>
+nmap <silent> gdt :ALEGoToDefinitionInTab<cr>
+nmap <silent> gdv :ALEGoToDefinitionInVSplit<cr>
+nmap <silent> gds :ALEGoToDefinitionInSplit<cr>
+
+" Bind F8 to fixing problems with ALE
+nmap <F8> <Plug>(ale_fix)
+
+" ruby interpolation inside string
+function! s:InsertInterpolation()
+  let before = getline('.')[col('^'):col('.')]
+  let after  = getline('.')[col('.'):col('$')]
+  " check that we're in double-quotes string
+  if before =~# '"' && after =~# '"'
+    execute "normal! a{}\<Esc>h"
+  endif
+endfunction
+inoremap <silent><buffer> # #<Esc>:call <SID>InsertInterpolation()<Cr>a
+
+" Surround with #
+if exists("g:loaded_surround")
+  let b:surround_{char2nr('#')} = "#{\r}"
+endif
