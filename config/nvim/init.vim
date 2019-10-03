@@ -86,6 +86,12 @@ Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 
+" autocomplete
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+
+Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 call plug#end()
 
 if !was_installed
@@ -173,45 +179,21 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
-let g:has_async = v:version >= 800 || has('nvim')
-" ALE linting events
-augroup ale
-  autocmd!
-
-  if g:has_async
-    autocmd VimEnter *
-          \ set updatetime=1000 |
-          \ let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
-augroup END
-
-" autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
-
 " ale configs
 " use rubocop
 let g:ale_fixers = {
       \   'ruby': ['rubocop', 'trim_whitespace', 'remove_trailing_lines'],
-      \   'javascript': ['jshint']
+      \   'javascript': ['prettier', 'eslint']
       \}
 
 let g:ale_linters = {
       \   'ruby': ['rubocop', 'solargraph', 'ruby'],
-      \   'javascript': ['jshint']
+      \   'javascript': ['eslint']
       \}
 let g:ale_ruby_rubocop_executable = 'rubocop'
 let g:ale_ruby_solargraph_executable = 'solargraph'
 let g:ale_ruby_solargraph_options = {}
 let g:ale_enabled = 1
-" Use ALE's function for omnicompletion.
-let g:ale_completion_enabled = 1
-set omnifunc=ale#completion#OmniFunc
-set completeopt=menu,menuone,preview,noselect,noinsert
 
 " Cursor motion
 set scrolloff=3

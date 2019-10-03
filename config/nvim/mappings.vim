@@ -64,12 +64,21 @@ endfunction
 
 "" Tabs for
 nnoremap <tab> :tabnext<CR>
+nnoremap <S-tab> :tabprevious<CR>
 nnoremap <C-T> :tabnew<CR>
 inoremap <tab> <Esc>:tabnext<CR>i
+inoremap <S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-T> <Esc>:tabnew<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Use Alt- numbers to pick the tab you want
 map <silent> <A-1> :tabn 1<cr>
