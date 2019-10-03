@@ -13,7 +13,8 @@ if [ "$(uname)" == "Darwin" ]; then
 else
   # used on work
   wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-  sudo apt install silversearcher-ag tmux mssql-tools
+  sudo apt install silversearcher-ag tmux mssql-tools libmagickwand-dev libcurl4-openssl-dev \
+    libc6-dev build-essential freetds-dev
 fi
 
 mkdir ~/workspace
