@@ -92,6 +92,10 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+Plug 'tpope/vim-eunuch'
+
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 if !was_installed
