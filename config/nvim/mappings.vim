@@ -24,8 +24,8 @@ nnoremap <leader>g :Ag <C-R><C-W>
 nnoremap <leader>h :set hlsearch!<CR>
 
 " git gutter hunk movements
-nmap <leader>j <Plug>GitGutterNextHunk
-nmap <leader>k <Plug>GitGutterPrevHunk
+nmap <leader>j <Plug>(GitGutterNextHunk)
+nmap <leader>k <Plug>(GitGutterPrevHunk)
 
 " Don't allow any default key-mappings.
 let g:tmux_navigator_no_mappings = 1
