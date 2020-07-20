@@ -8,8 +8,6 @@ if !filereadable(expand(vimdir . "autoload/plug.vim"))
 endif
 
 call plug#begin('~/.vim/plugged')
-" lint and fixer
-Plug 'dense-analysis/ale'
 " Airline for the tabs
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -182,22 +180,6 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " better whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
-
-" ale configs
-" use rubocop
-let g:ale_fixers = {
-      \   'ruby': ['rubocop', 'trim_whitespace', 'remove_trailing_lines'],
-      \   'javascript': ['prettier', 'eslint']
-      \}
-
-let g:ale_linters = {
-      \   'ruby': ['rubocop', 'solargraph', 'ruby'],
-      \   'javascript': ['eslint']
-      \}
-let g:ale_ruby_rubocop_executable = 'rubocop'
-let g:ale_ruby_solargraph_executable = 'solargraph'
-let g:ale_ruby_solargraph_options = {}
-let g:ale_enabled = 1
 
 " Cursor motion
 set scrolloff=3

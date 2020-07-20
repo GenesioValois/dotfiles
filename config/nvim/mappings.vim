@@ -116,6 +116,8 @@ nnoremap <f4> :call Term_toggle()<cr>
 
 " Vim-Fugitive
 nmap <leader>gs :Gstatus<CR>
+nmap <leader>gp :Gpush<CR>
+nmap <leader>gg :Git pull<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>ga :Git add .<CR>:bd!<CR>
@@ -123,7 +125,6 @@ nmap <leader>gc :Gcommit<CR>
 nmap <leader>gl :Glog
 nmap <leader>ge :Gedit<CR>
 nmap <leader>gh :Git checkout
-nmap <leader>gg :Git pull<CR>
 nmap <leader>gm :Git checkout master
 nmap <leader>gwd :Git diff HEAD .<CR>
 
@@ -248,13 +249,6 @@ map  N <Plug>(easymotion-prev)
 " search files
 nmap <silent> <Leader>f :Files<CR>
 
-" Ack
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
-
-" ALEFix
-nmap <Leader>af <Plug>(ale_fix):e!<Enter>
-
 " Replace all :
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 
@@ -264,14 +258,18 @@ nmap <Leader>cs :let @+=expand("%")<CR>
 " debugger mapping
 iabbr dbg debugger;
 
-" Remap keys for gotos
-nmap <silent> gdd :ALEGoToDefinition<cr>
-nmap <silent> gdt :ALEGoToDefinitionInTab<cr>
-nmap <silent> gdv :ALEGoToDefinitionInVSplit<cr>
-nmap <silent> gds :ALEGoToDefinitionInSplit<cr>
+"" Fixer
+nmap <F8> :call CocActionAsync('format')<cr>
+" Prettier
+vmap <leader>z  <Plug>(coc-format-selected)
+nmap <leader>z  <Plug>(coc-format-selected)
 
-" Bind F8 to fixing problems with ALE
-nmap <F8> <Plug>(ale_fix)
+" Remap keys for gotos
+nmap <silent> gdd :call CocAction('jumpDefinition', 'drop')<cr>
+nmap <silent> gdt :call CocAction('jumpDefinition', 'tab drop')<cr>
+nmap <silent> gds :call CocAction('jumpDefinition', 'split')<cr>
+nmap <silent> gdv :call CocAction('jumpDefinition', 'vsplit')<cr>
+nmap <silent> gdi <Plug>(coc-implementation)
 
 " ruby interpolation inside string
 function! s:InsertInterpolation()

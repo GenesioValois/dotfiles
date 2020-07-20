@@ -1,0 +1,164 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+#	config/nvim/mappings.vim	/^inoremap <silent><buffer> # #<Esc>:call <SID>InsertInterpolation()<Cr>a$/;"	m
+,"	config/nvim/mappings.vim	/^map ," ysiw"$/;"	m
+,"	config/nvim/mappings.vim	/^vmap ," c"<C-R>""<ESC>$/;"	m
+,#	config/nvim/mappings.vim	/^map ,# ciw#{<C-R>"}<ESC>$/;"	m
+,#	config/nvim/mappings.vim	/^vmap ,# c#{<C-R>"}<ESC>$/;"	m
+,'	config/nvim/mappings.vim	/^map ,' ysiw'$/;"	m
+,'	config/nvim/mappings.vim	/^vmap ,' c'<C-R>"'<ESC>$/;"	m
+,(	config/nvim/mappings.vim	/^map ,( ysiw($/;"	m
+,(	config/nvim/mappings.vim	/^vmap ,( c( <C-R>" )<ESC>$/;"	m
+,)	config/nvim/mappings.vim	/^map ,) ysiw)$/;"	m
+,)	config/nvim/mappings.vim	/^vmap ,) c(<C-R>")<ESC>$/;"	m
+,[	config/nvim/mappings.vim	/^map ,[ ysiw[$/;"	m
+,[	config/nvim/mappings.vim	/^vmap ,[ c[ <C-R>" ]<ESC>$/;"	m
+,]	config/nvim/mappings.vim	/^map ,] ysiw]$/;"	m
+,]	config/nvim/mappings.vim	/^vmap ,] c[<C-R>"]<ESC>$/;"	m
+,ow	config/nvim/mappings.vim	/^nnoremap ,ow "_diwhp$/;"	m
+,yw	config/nvim/mappings.vim	/^nnoremap ,yw yiww$/;"	m
+,{	config/nvim/mappings.vim	/^map ,{ ysiw{$/;"	m
+,{	config/nvim/mappings.vim	/^vmap ,{ c{<C-R>"}<ESC>$/;"	m
+,}	config/nvim/mappings.vim	/^map ,} ysiw}$/;"	m
+,}	config/nvim/mappings.vim	/^vmap ,} c{ <C-R>" }<ESC>$/;"	m
+/	config/nvim/mappings.vim	/^map  \/ <Plug>(easymotion-sn)$/;"	m
+/	config/nvim/mappings.vim	/^omap \/ <Plug>(easymotion-tn)$/;"	m
+0	config/nvim/mappings.vim	/^nnoremap 0 ^$/;"	m
+<A-">	config/nvim/mappings.vim	/^nnoremap <A-"> f"ci"$/;"	m
+<A-'>	config/nvim/mappings.vim	/^nnoremap <A-'> f'ci'$/;"	m
+<A-(>	config/nvim/mappings.vim	/^nnoremap <A-(> f(ci($/;"	m
+<A-)>	config/nvim/mappings.vim	/^nnoremap <A-)> f)ci)$/;"	m
+<A-1>	config/nvim/mappings.vim	/^map <silent> <A-1> :tabn 1<cr>$/;"	m
+<A-2>	config/nvim/mappings.vim	/^map <silent> <A-2> :tabn 2<cr>$/;"	m
+<A-3>	config/nvim/mappings.vim	/^map <silent> <A-3> :tabn 3<cr>$/;"	m
+<A-4>	config/nvim/mappings.vim	/^map <silent> <A-4> :tabn 4<cr>$/;"	m
+<A-5>	config/nvim/mappings.vim	/^map <silent> <A-5> :tabn 5<cr>$/;"	m
+<A-6>	config/nvim/mappings.vim	/^map <silent> <A-6> :tabn 6<cr>$/;"	m
+<A-7>	config/nvim/mappings.vim	/^map <silent> <A-7> :tabn 7<cr>$/;"	m
+<A-8>	config/nvim/mappings.vim	/^map <silent> <A-8> :tabn 8<cr>$/;"	m
+<A-9>	config/nvim/mappings.vim	/^map <silent> <A-9> :tabn 9<cr>$/;"	m
+<A-[>	config/nvim/mappings.vim	/^nnoremap <A-[> f[ci[$/;"	m
+<A-]>	config/nvim/mappings.vim	/^nnoremap <A-]> f]ci]$/;"	m
+<A-j>	config/nvim/mappings.vim	/^nnoremap <silent> <A-j> }$/;"	m
+<A-k>	config/nvim/mappings.vim	/^nnoremap <silent> <A-k> {$/;"	m
+<C-Down>	config/nvim/mappings.vim	/^nnoremap <C-Down> <C-w>-$/;"	m
+<C-Left>	config/nvim/mappings.vim	/^nnoremap <C-Left> <C-w><$/;"	m
+<C-Right>	config/nvim/mappings.vim	/^nnoremap <C-Right>  <C-w>>$/;"	m
+<C-T>	config/nvim/mappings.vim	/^inoremap <C-T> <Esc>:tabnew<CR>$/;"	m
+<C-T>	config/nvim/mappings.vim	/^nnoremap <C-T> :tabnew<CR>$/;"	m
+<C-Up>	config/nvim/mappings.vim	/^nnoremap <C-Up> <C-w>+$/;"	m
+<C-h>	config/nvim/mappings.vim	/^nnoremap <C-h> <C-w>h$/;"	m
+<C-j>	config/nvim/mappings.vim	/^nnoremap <C-j> <C-w>j$/;"	m
+<C-k>	config/nvim/mappings.vim	/^nnoremap <C-k> <C-w>k$/;"	m
+<C-l>	config/nvim/mappings.vim	/^nnoremap <C-l> <C-w>l$/;"	m
+<Down>	config/nvim/mappings.vim	/^noremap <Down> :echoe "Use j"<CR>$/;"	m
+<F8>	config/nvim/mappings.vim	/^nmap <F8> <Plug>(ale_fix)$/;"	m
+<Leader><Leader>	config/nvim/mappings.vim	/^nnoremap <Leader><Leader> <C-^>$/;"	m
+<Leader>a	config/nvim/mappings.vim	/^nnoremap <Leader>a :Ack!<Space>$/;"	m
+<Leader>af	config/nvim/mappings.vim	/^nmap <Leader>af <Plug>(ale_fix):e!<Enter>$/;"	m
+<Leader>cs	config/nvim/mappings.vim	/^nmap <Leader>cs :let @+=expand("%")<CR>$/;"	m
+<Leader>f	config/nvim/mappings.vim	/^nmap <silent> <Leader>f :Files<CR>$/;"	m
+<Leader>s	config/nvim/mappings.vim	/^nnoremap <Leader>s :%s\/\\<<C-r><C-w>\\>\/\/gc<Left><Left><Left>$/;"	m
+<Leader>ta	config/nvim/mappings.vim	/^map <Leader>ta :TestSuite<CR>$/;"	m
+<Leader>tf	config/nvim/mappings.vim	/^map <Leader>tf :TestFile<CR>$/;"	m
+<Leader>tl	config/nvim/mappings.vim	/^map <Leader>tl :TestLast<CR>$/;"	m
+<Leader>tn	config/nvim/mappings.vim	/^map <Leader>tn :TestNearest<CR>$/;"	m
+<Left>	config/nvim/mappings.vim	/^noremap <Left> :echoe "Use h"<CR>$/;"	m
+<Right>	config/nvim/mappings.vim	/^noremap <Right> :echoe "Use l"<CR>$/;"	m
+<S-Tab>	config/nvim/mappings.vim	/^inoremap <S-Tab> <C-n>$/;"	m
+<S-Tab>	config/nvim/mappings.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
+<S-tab>	config/nvim/mappings.vim	/^inoremap <S-tab> <Esc>:tabprevious<CR>i$/;"	m
+<S-tab>	config/nvim/mappings.vim	/^nnoremap <S-tab> :tabprevious<CR>$/;"	m
+<S-tab>	config/nvim/mappings.vim	/^vmap <S-tab>    <gv$/;"	m
+<Space>	config/nvim/mappings.vim	/^nno <Space> :$/;"	m
+<Space>	config/nvim/mappings.vim	/^vno <Space> :$/;"	m
+<TAB>	config/nvim/mappings.vim	/^inoremap <expr> <TAB> pumvisible() ? "\\<C-y>" : "\\<TAB>"$/;"	m
+<Tab>	config/nvim/mappings.vim	/^inoremap <Tab> <C-r>=InsertTabWrapper()<CR>$/;"	m
+<Tab>	config/nvim/mappings.vim	/^inoremap <expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
+<Tab>	config/nvim/mappings.vim	/^inoremap <silent><expr> <Tab>$/;"	m
+<Up>	config/nvim/mappings.vim	/^noremap <Up> :echoe "Use k"<CR>$/;"	m
+<c-h>	config/nvim/mappings.vim	/^nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>$/;"	m
+<c-j>	config/nvim/mappings.vim	/^nnoremap <silent> <c-j> :TmuxNavigateDown<cr>$/;"	m
+<c-k>	config/nvim/mappings.vim	/^nnoremap <silent> <c-k> :TmuxNavigateUp<cr>$/;"	m
+<c-l>	config/nvim/mappings.vim	/^nnoremap <silent> <c-l> :TmuxNavigateRight<cr>$/;"	m
+<f4>	config/nvim/mappings.vim	/^nnoremap <f4> :call Term_toggle()<cr>$/;"	m
+<leader>g	config/nvim/mappings.vim	/^nnoremap <leader>g :Ag <C-R><C-W>$/;"	m
+<leader>ga	config/nvim/mappings.vim	/^nmap <leader>ga :Git add .<CR>:bd!<CR>$/;"	m
+<leader>gb	config/nvim/mappings.vim	/^nmap <leader>gb :Gblame<CR>$/;"	m
+<leader>gc	config/nvim/mappings.vim	/^nmap <leader>gc :Gcommit<CR>$/;"	m
+<leader>gd	config/nvim/mappings.vim	/^nmap <leader>gd :Gdiff<CR>$/;"	m
+<leader>ge	config/nvim/mappings.vim	/^nmap <leader>ge :Gedit<CR>$/;"	m
+<leader>gg	config/nvim/mappings.vim	/^nmap <leader>gg :Git pull<CR>$/;"	m
+<leader>gh	config/nvim/mappings.vim	/^nmap <leader>gh :Git checkout$/;"	m
+<leader>gl	config/nvim/mappings.vim	/^nmap <leader>gl :Glog$/;"	m
+<leader>gm	config/nvim/mappings.vim	/^nmap <leader>gm :Git checkout master$/;"	m
+<leader>gs	config/nvim/mappings.vim	/^nmap <leader>gs :Gstatus<CR>$/;"	m
+<leader>gwd	config/nvim/mappings.vim	/^nmap <leader>gwd :Git diff HEAD .<CR>$/;"	m
+<leader>h	config/nvim/mappings.vim	/^nnoremap <leader>h :set hlsearch!<CR>$/;"	m
+<leader>j	config/nvim/mappings.vim	/^nmap <leader>j <Plug>GitGutterNextHunk$/;"	m
+<leader>k	config/nvim/mappings.vim	/^nmap <leader>k <Plug>GitGutterPrevHunk$/;"	m
+<leader>rc	config/nvim/mappings.vim	/^nmap <leader>rc :Econtroller<CR>$/;"	m
+<leader>rm	config/nvim/mappings.vim	/^nmap <leader>rm :Emodel<CR>$/;"	m
+<leader>rt	config/nvim/mappings.vim	/^nmap <leader>rt :A<CR>$/;"	m
+<leader>rv	config/nvim/mappings.vim	/^nmap <leader>rv :Eview<CR>$/;"	m
+<leader>rwc	config/nvim/mappings.vim	/^nmap <leader>rwc :Vcontroller<CR>$/;"	m
+<leader>rwm	config/nvim/mappings.vim	/^nmap <leader>rwm :Vmodel<CR>$/;"	m
+<leader>rwt	config/nvim/mappings.vim	/^nmap <leader>rwt :AV<CR>$/;"	m
+<leader>rwu	config/nvim/mappings.vim	/^nmap <leader>rwu :RuboCop -a<CR>$/;"	m
+<leader>rwv	config/nvim/mappings.vim	/^nmap <leader>rwv :Vview<CR>$/;"	m
+<leader>t	config/nvim/mappings.vim	/^nmap <leader>t :TestFile<CR>$/;"	m
+<tab>	config/nvim/mappings.vim	/^inoremap <tab> <Esc>:tabnext<CR>i$/;"	m
+<tab>	config/nvim/mappings.vim	/^nnoremap <tab> :tabnext<CR>$/;"	m
+<tab>	config/nvim/mappings.vim	/^vmap <tab>      >gv$/;"	m
+Ack	config/nvim/mappings.vim	/^cnoreabbrev Ack Ack!$/;"	m
+Find	config/nvim/init.vim	/^command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git\/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)$/;"	c
+InsertInterpolation	config/nvim/mappings.vim	/^function! s:InsertInterpolation()$/;"	f
+InsertTabWrapper	config/nvim/mappings.vim	/^function! InsertTabWrapper()$/;"	f
+N	config/nvim/mappings.vim	/^map  N <Plug>(easymotion-prev)$/;"	m
+P	config/nvim/mappings.vim	/^nnoremap P P=`]$/;"	m
+Term_toggle	config/nvim/mappings.vim	/^function! Term_toggle()$/;"	f
+Y	config/nvim/mappings.vim	/^nnoremap Y y\$$/;"	m
+YRRunAfterMaps	config/nvim/mappings.vim	/^function! YRRunAfterMaps()$/;"	f
+^	config/nvim/mappings.vim	/^nnoremap ^ 0$/;"	m
+b:surround_	config/nvim/mappings.vim	/^  let b:surround_{char2nr('#')} = "#{\\r}"$/;"	v
+g:airline#extensions#tabline#formatter	config/nvim/init.vim	/^let g:airline#extensions#tabline#formatter = 'default'$/;"	v
+g:airline_powerline_fonts	config/nvim/init.vim	/^let g:airline_powerline_fonts = 1$/;"	v
+g:airline_theme	config/nvim/init.vim	/^let g:airline_theme='minimalist'$/;"	v
+g:ale_enabled	config/nvim/init.vim	/^let g:ale_enabled = 1$/;"	v
+g:ale_fixers	config/nvim/init.vim	/^let g:ale_fixers = {$/;"	v
+g:ale_linters	config/nvim/init.vim	/^let g:ale_linters = {$/;"	v
+g:ale_ruby_rubocop_executable	config/nvim/init.vim	/^let g:ale_ruby_rubocop_executable = 'rubocop'$/;"	v
+g:ale_ruby_solargraph_executable	config/nvim/init.vim	/^let g:ale_ruby_solargraph_executable = 'solargraph'$/;"	v
+g:ale_ruby_solargraph_options	config/nvim/init.vim	/^let g:ale_ruby_solargraph_options = {}$/;"	v
+g:better_whitespace_enabled	config/nvim/init.vim	/^let g:better_whitespace_enabled=1$/;"	v
+g:coc_snippet_next	config/nvim/mappings.vim	/^let g:coc_snippet_next = '<TAB>'$/;"	v
+g:coc_snippet_prev	config/nvim/mappings.vim	/^let g:coc_snippet_prev = '<S-TAB>'$/;"	v
+g:indentLine_conceallevel	config/nvim/init.vim	/^let g:indentLine_conceallevel=1$/;"	v
+g:loaded_2html_plugin	config/nvim/init.vim	/^let g:loaded_2html_plugin = 1$/;"	v
+g:loaded_gzip	config/nvim/init.vim	/^let g:loaded_gzip = 1$/;"	v
+g:loaded_netrwPlugin	config/nvim/init.vim	/^let g:loaded_netrwPlugin = 1$/;"	v
+g:loaded_tarPlugin	config/nvim/init.vim	/^let g:loaded_tarPlugin = 1 " May cause problems with fireplace$/;"	v
+g:loaded_zipPlugin	config/nvim/init.vim	/^let g:loaded_zipPlugin = 1$/;"	v
+g:mapleader	config/nvim/init.vim	/^let g:mapleader=","$/;"	v
+g:strip_whitespace_on_save	config/nvim/init.vim	/^let g:strip_whitespace_on_save=1$/;"	v
+g:term_buf	config/nvim/mappings.vim	/^let g:term_buf = 0$/;"	v
+g:tmux_navigator_no_mappings	config/nvim/mappings.vim	/^let g:tmux_navigator_no_mappings = 1$/;"	v
+g:tmuxline_preset	config/nvim/init.vim	/^let g:tmuxline_preset = 'full'$/;"	v
+gdd	config/nvim/mappings.vim	/^nmap <silent> gdd :ALEGoToDefinition<cr>$/;"	m
+gds	config/nvim/mappings.vim	/^nmap <silent> gds :ALEGoToDefinitionInSplit<cr>$/;"	m
+gdt	config/nvim/mappings.vim	/^nmap <silent> gdt :ALEGoToDefinitionInTab<cr>$/;"	m
+gdv	config/nvim/mappings.vim	/^nmap <silent> gdv :ALEGoToDefinitionInVSplit<cr>$/;"	m
+mapleader	config/nvim/init.vim	/^let mapleader=","$/;"	v
+n	config/nvim/mappings.vim	/^map  n <Plug>(easymotion-next)$/;"	m
+p	config/nvim/mappings.vim	/^nnoremap p p=`]$/;"	m
+sj	config/nvim/mappings.vim	/^nmap sj :SplitjoinSplit<cr>$/;"	m
+sk	config/nvim/mappings.vim	/^nmap sk :SplitjoinJoin<cr>$/;"	m
+ss	config/nvim/mappings.vim	/^nnoremap <silent> ss <C-w>s$/;"	m
+vimdir	config/nvim/init.vim	/^let vimdir = '~\/.config\/nvim\/'$/;"	v
+vv	config/nvim/mappings.vim	/^nnoremap <silent> vv <C-w>v$/;"	m
+was_installed	config/nvim/init.vim	/^  let was_installed = 0$/;"	v
+was_installed	config/nvim/init.vim	/^let was_installed = 1$/;"	v
