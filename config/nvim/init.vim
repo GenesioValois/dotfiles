@@ -70,9 +70,9 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 "whitespace
 Plug 'ntpeters/vim-better-whitespace'
-" JS highlighting and indent support. Sometimes buggy, but has support for
-" " jsdocs and flow
-Plug 'pangloss/vim-javascript', { 'for': ['javascript']}
+" JSX support
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 "buffer files
 Plug 'Shougo/denite.nvim'
 " splitjoin
