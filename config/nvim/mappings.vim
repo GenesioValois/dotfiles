@@ -270,6 +270,8 @@ nmap <silent> gdt :call CocAction('jumpDefinition', 'tab drop')<cr>
 nmap <silent> gds :call CocAction('jumpDefinition', 'split')<cr>
 nmap <silent> gdv :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent> gdi <Plug>(coc-implementation)
+" code Actions
+nmap <leader>do <Plug>(coc-codeaction)
 
 " ruby interpolation inside string
 function! s:InsertInterpolation()

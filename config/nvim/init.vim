@@ -195,6 +195,8 @@ set conceallevel=1
 let g:indentLine_conceallevel=1
 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " Make it obvious where 80 characters is
 " at deco we use 100
@@ -204,5 +206,8 @@ set colorcolumn=+1
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" coc configurations and plugins
+let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-solargraph']
 
 so ~/.config/nvim/mappings.vim
