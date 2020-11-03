@@ -248,6 +248,7 @@ map  N <Plug>(easymotion-prev)
 
 " search files
 nmap <silent> <Leader>f :Files<CR>
+nmap <silent> <Leader>; :Buffers<CR>
 
 " Replace all :
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
