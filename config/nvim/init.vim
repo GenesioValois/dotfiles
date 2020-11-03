@@ -17,12 +17,8 @@ Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 " Auto close pairs
 Plug 'jiangmiao/auto-pairs'
-" " Ctags
-" Plug 'ludovicchabant/vim-gutentags'
 " Unpaired
 Plug 'tpope/vim-unimpaired'
-" Git Diff
-Plug 'airblade/vim-gitgutter'
 " Show lines changed
 Plug 'airblade/vim-gitgutter'
 " Multple cursors is hot
@@ -41,14 +37,10 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'ngmy/vim-rubocop'
 Plug 'tpope/vim-cucumber'
 Plug 'janko-m/vim-test'
-" Multiple cursors
-Plug 'terryma/vim-multiple-cursors'
 " Change background of inactive windows
 Plug 'blueyed/vim-diminactive'
-
 " Colorschemes/themes
 Plug 'morhetz/gruvbox'
-
 " Display indent steps
 Plug 'Yggdroot/indentLine'
 " Add end to ruby blocks automatically
