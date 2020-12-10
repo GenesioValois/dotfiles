@@ -11,8 +11,8 @@ call plug#begin('~/.vim/plugged')
 " Airline for the tabs
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Change tmux line to use the same airline theme
 Plug 'edkolev/tmuxline.vim'
-Plug 'honza/vim-snippets'
 " Comment in/out stuff easily
 Plug 'tomtom/tcomment_vim'
 " Auto close pairs
@@ -65,8 +65,6 @@ Plug 'ntpeters/vim-better-whitespace'
 " JSX support
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-"buffer files
-Plug 'Shougo/denite.nvim'
 " splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
 " using ctrl + h/j/k/l on tmux
@@ -75,16 +73,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
-
 " autocomplete
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-
 Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
-Plug 'tpope/vim-eunuch'
-
+" start page
 Plug 'mhinz/vim-startify'
 call plug#end()
 
